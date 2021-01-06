@@ -2,21 +2,6 @@
 
 @section("content")
 
-	<table>
-		<tr>
-			<td>Nama</td>
-			<td>{{ Auth::user()->name }}</td>
-		</tr>
-		<tr>
-			<td>Email</td>
-			<td>{{ Auth::user()->email }}</td>
-		</tr>
-		<tr>
-			<td>Koin</td>
-			<td>{{ Auth::user()->koin }}</td>
-		</tr>
-	</table>
-
 	<h2>Beli Voucher</h2>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptates accusantium!<br />Odio nemo fugiat numquam, impedit enim sint veritatis, tempora doloremque quasi quod dicta quas dolorem eveniet quo laborum quaerat.</p>
 	

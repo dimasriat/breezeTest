@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VoucherController;
+use App\Http\Controllers\TryOutSKDController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,5 +29,11 @@ Route::put('/dashboard/edit', [UserController::class, 'update'])
 
 Route::get('/voucher', [VoucherController::class, 'index'])
 	->middleware(['auth'])->name('voucher.index');
+Route::put('/voucher/submit', [VoucherController::class, 'update'])
+	->middleware(['auth'])->name('voucher.submit');
+
+Route::get('/tryout_skd', [TryOutSKDController::class, 'index'])
+	->middleware(['auth'])->name('tryout_skd.index');
 
 require __DIR__ . '/auth.php';
+require __DIR__ . '/apitest.php';

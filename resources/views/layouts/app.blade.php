@@ -9,7 +9,7 @@
 		select, textarea, input {
 			margin: 0.5rem 0;
 		}
-		td {
+		td, th {
 			border: 1px solid lightgray;
 			padding: 0.25rem;
 		}
@@ -23,15 +23,16 @@
 	<h1>Tryout ABAL ABAL</h1>
 	<nav>
 		@auth
-		<a href="{{ url('/dashboard') }}">Dashboard</a>
-		<a href="{{ url('/voucher') }}">Voucher</a>
-		<a href="{{ url('/to_skd') }}">Try Out SKD</a>
+		<a href="{{ route('dashboard.index') }}">Dashboard</a>
+		<a href="{{ route('voucher.index') }}">Voucher</a>
+		<a href="{{ route('tryout_skd.index') }}">Try Out SKD</a>
 		<a href="{{ url('/to_tpa_tbi') }}">Try Out TPA / TBI</a>
 		<a href="{{ url('/peringkat') }}">Cek Peringkat</a>
 		<form method="POST" action="{{ route('logout') }}">
 			@csrf
 			<input type="submit" value="logout"/>
 		</form>
+		<p style="font-weight: bold; margin: 0.25rem 0; color: crimson;">Koin: {{ Auth::user()->koin }}</p>
 		@else
 		<a href="/">Home</a>
 		<a href="{{ route('login') }}">Login</a>

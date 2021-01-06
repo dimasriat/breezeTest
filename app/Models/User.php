@@ -25,6 +25,7 @@ class User extends Authenticatable
 		'pendidikan_terakhir',
 		'jurusan',
 		'instansi_yang_dituju',
+		'koin',
 	];
 
 	/**
@@ -45,4 +46,8 @@ class User extends Authenticatable
 	protected $casts = [
 		'email_verified_at' => 'datetime',
 	];
+	
+	public function paketSoal() {
+		return $this->belongsToMany(User::class, 'user_beli_paket_soal', 'users_id', 'paket_soal_id');
+	}
 }
