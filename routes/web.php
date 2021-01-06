@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\VoucherController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,8 +19,14 @@ Route::get('/', function () {
 	return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-	return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', [UserController::class, 'index'])
+	->middleware(['auth'])->name('dashboard.index');
+Route::get('/dashboard/edit', [UserController::class, 'edit'])
+	->middleware(['auth'])->name('dashboard.edit');
+Route::put('/dashboard/edit', [UserController::class, 'update'])
+	->middleware(['auth'])->name('dashboard.update');
+
+Route::get('/voucher', [VoucherController::class, 'index'])
+	->middleware(['auth'])->name('voucher.index');
 
 require __DIR__ . '/auth.php';

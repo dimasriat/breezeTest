@@ -6,7 +6,7 @@
 	@csrf
 	<div>
 		<label for="email">Email:</label><br />
-		<input id="email" type="email" name="email" placeholder="email" />
+		<input id="email" type="email" name="email" placeholder="email" value="{{ old('email') }}"/>
 	</div>
 	<div>
 		<label for="password">Password:</label><br />

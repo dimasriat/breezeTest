@@ -6,11 +6,11 @@
 	@csrf
 	<div>
 		<label for="name">Name:</label><br/>
-		<input id="name" type="text" name="name" placeholder="name" />
+		<input id="name" type="text" name="name" placeholder="name"  value="{{ old('name') }}"/>
 	</div>
 	<div>
 		<label for="email">Email:</label><br/>
-		<input id="email" type="email" name="email" placeholder="email" />
+		<input id="email" type="email" name="email" placeholder="email"  value="{{ old('email') }}"/>
 	</div>
 	<div>
 		<label for="password">Password:</label><br/>
