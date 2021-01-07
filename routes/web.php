@@ -29,11 +29,13 @@ Route::put('/dashboard/edit', [UserController::class, 'update'])
 
 Route::get('/voucher', [VoucherController::class, 'index'])
 	->middleware(['auth'])->name('voucher.index');
-Route::put('/voucher/submit', [VoucherController::class, 'update'])
-	->middleware(['auth'])->name('voucher.submit');
+Route::put('/voucher', [VoucherController::class, 'update'])
+	->middleware(['auth'])->name('voucher.update');
 
 Route::get('/tryout_skd', [TryOutSKDController::class, 'index'])
 	->middleware(['auth'])->name('tryout_skd.index');
+Route::post('/tryout_skd', [TryOutSKDController::class, 'store'])
+	->middleware(['auth'])->name('tryout_skd.store');
 
 require __DIR__ . '/auth.php';
 require __DIR__ . '/apitest.php';

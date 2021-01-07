@@ -2,16 +2,29 @@
 
 @section("content")
 
-	<h2>Beli Voucher</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, voluptates accusantium!<br />Odio nemo fugiat numquam, impedit enim sint veritatis, tempora doloremque quasi quod dicta quas dolorem eveniet quo laborum quaerat.</p>
+	<h2>Voucher Tersedia</h2>
+	<table>
+		<tr>
+			<th>serial</th>
+			<th>nama</th>
+			<th>koin</th>
+		</tr>
+		@foreach($voucherAvailable as $voucher)
+		<tr>
+			<td>{{ $voucher->serial }}</td>
+			<td>{{ $voucher->nama }}</td>
+			<td>{{ $voucher->koin }}</td>
+		</tr>
+		@endforeach
+	</table>
 	
 	<h2>Masukkan Kode</h2>
-	<form method="POST" action="{{ route('voucher.index') }}">
+	<form method="POST" action="{{ route('voucher.update') }}">
 		@csrf
 		@method("PUT")
 		<div>
-			<label for="kode_voucher">Kode Voucher:</label><br />
-			<input id="kode_voucher" type="text" name="kode_voucher"  value="{{ old('kode_voucher') }}" placeholder="XXXX-XXXX-XXXX-XXXX" />
+			<label for="serial">Kode Voucher:</label><br />
+			<input id="serial" type="text" name="serial"  value="{{ old('serial') }}" placeholder="XXX-XXX" />
 		</div>
 		<input type="submit" name="submit" value="submit" />
 	</form>

@@ -48,6 +48,6 @@ class User extends Authenticatable
 	];
 	
 	public function paketSoal() {
-		return $this->belongsToMany(User::class, 'user_beli_paket_soal', 'users_id', 'paket_soal_id');
+		return $this->belongsToMany(PaketSoal::class, 'user_beli_paket_soal', 'users_id', 'paket_soal_id');
 	}
 }
